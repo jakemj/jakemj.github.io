@@ -54,4 +54,6 @@
               transform: rotate(180deg);
         }
 
-      
+        body {
+  background-image: url("jah.jpg");
+}
