@@ -1,8 +1,8 @@
         .navbar{
             list-style: none;
-            background-color: black;
             overflow: hidden;
             padding: 0;
+            background-color:lightslategray;
         }
 
         .navbar a, .dropdown div{
