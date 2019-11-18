@@ -40,8 +40,6 @@
             top: 0px;
             left: 56%;
             right: 0px;
-            display: flex;
-            align-items: center;
             justify-content: center;
             background-color: pink;
         }
@@ -58,7 +56,7 @@
             background-color: yellow;
         }
 
-        #b1{
+        #b1, #b2, #b3, #b3, #b4{
             display: inline-block;
             background-color: purple;
             color: white;
@@ -67,40 +65,19 @@
             border-radius: 8px;
             text-decoration: none;
             margin: 8px;
+        }
+        
+        #ptext1{
+            color: blue;
+        }
+        
+        #storyimg{
+            max-height: 100%;
+            max-width: 100%;
+            width: 100%;
+            height: 100%;
         }
 
-        #b2{
-            display: inline-block;
-            background-color: purple;
-            color: white;
-            font-size: 16px;
-            padding: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 8px;
-        }
-
-        #b3{
-            display: inline-block;
-            background-color: purple;
-            color: white;
-            font-size: 16px;
-            padding: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 8px;
-        }
-
-        #b4{
-            display: inline-block;
-            background-color: purple;
-            color: white;
-            font-size: 16px;
-            padding: 10px;
-            border-radius: 8px;
-            text-decoration: none;
-            margin: 8px;
-        }
     </style>
     </head>
     <body>
@@ -122,21 +99,89 @@
     <body>
         <div id='container'>
             <div id='leftpane'>
+                <img id='storyimg' src="">
             </div>
 
             <div id='rightpane'>
                 <div id='storytext'>
+                    <p id='ptext1'>insert text here</p>
+                    <p id='ptext2'>insert text here</p>
+                    <p id='ptext3'>insert text here</p>
+                    <p id='ptext4'>insert text here</p>
+
                 </div>
                 <div id='choices'>
-                    <a id='b1' href="#"> Choice 1</a>
-                    <a id='b2' href="#"> Choice 2</a>
-                    <a id='b3' href="#"> Choice 3</a>
-                    <a id='b4' href="#"> Choice 4</a>
+                    <a id='b1' onclick="bclick(1)" href="#"> Choice 1</a>
+                    <a id='b2' onclick="bclick(2)"href="#"> Choice 2</a>
+                    <a id='b3' onclick="bclick(3)"href="#"> Choice 3</a>
+                    <a id='b4' onclick="bclick(4)"href="#"> Choice 4</a>
                 </div>
 
             </div>
         </div>
 
+<script>
+    var pic = document.getElementById('storyimg');
+    var ptext1 = document.getElementById('ptext1');
+    var ptext2 = document.getElementById('ptext2');
+    var ptext3 = document.getElementById('ptext3');
+    var ptext4 = document.getElementById('ptext4');
+    var b1 = document.getElementById('b1');
+    var b2 = document.getElementById('b2');
+    var b3 = document.getElementById('b3');
+    var b4 = document.getElementById('b4');
+    var state = "intro";
+    intro();
 
+    function intro(){
+        pic.src = "images/11.jpg";
+        ptext1.innerHTML="A poor science college student named Dio Brando prepares for dinner in the dorm rooms with his roommate. They decide to cook instant ramen in their microwave, due to their growing student debt.";
+        ptext2.innerHTML="";
+        ptext3.innerHTML="";
+        ptext4.innerHTML="";
+        b1.innerHTML="continue";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+
+    }
+
+    function ramentime(){
+        pic.src = "images/12.jpg";
+        ptext1.innerHTML="What flavor of TopRamen® shall you choose? ";
+        b1.innerHTML("chicken");
+        b2.innerHTML("beef");
+        b3.innerHTML("shrimp");
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "none";
+
+    }
+    //state machine
+    function bclick(button){
+        if(state =="intro"){
+            if (button == 1){
+                ramentime();
+                state = "ramentime"
+            }
+
+        }
+        else if(state == "meetWitch"){
+            if (button == 1){
+                //attack
+            }
+            else if(button == 2){
+                //run
+            }
+            else if(button == 3){
+                //stay
+            }
+        }
+        return false;
+    }
+
+</script>
     </body>
     </html>
