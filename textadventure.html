@@ -68,7 +68,7 @@
         }
         
         #ptext1{
-            color: blue;
+            color: black;
         }
         
         #storyimg{
@@ -150,15 +150,45 @@
     function ramentime(){
         pic.src = "images/12.jpg";
         ptext1.innerHTML="What flavor of TopRamen® shall you choose? ";
-        b1.innerHTML("chicken");
-        b2.innerHTML("beef");
-        b3.innerHTML("shrimp");
+        b1.innerHTML = "chicken";
+        b2.innerHTML = "beef";
+        b3.innerHTML = "shrimp";
         b1.style.display = "block";
         b2.style.display = "block";
         b3.style.display = "block";
         b4.style.display = "none";
 
     }
+
+   function correct(){
+       pic.src = "images/topsec.jpg";
+        ptext1.innerHTML= "Correct, Chicken Top Ramen is in fact the type of Top Ramen with the secret ingredient.";
+        b1.innerHTML = "continue";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function failbeef(){
+       pic.src = "images/failbeef.jpg";
+        ptext1.innerHTML= "Beef is quite tasty, but does not contain the secret ingredient. It does contain some state of the art gunpowder though, and you just put it in the microwave..";
+        b1.innerHTML = "continue";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function failshrimp(){
+       pic.src = "images/failshrimp.jpg";
+        ptext1.innerHTML= "Sorry, please try again. Shrimp is quite nasty and certainly does not contain the secret ingredient.";
+        b1.innerHTML = "continue";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
     //state machine
     function bclick(button){
         if(state =="intro"){
@@ -166,21 +196,45 @@
                 ramentime();
                 state = "ramentime"
             }
-
+        
         }
-        else if(state == "meetWitch"){
+        else if(state == "ramentime"){
             if (button == 1){
-                //attack
+                correct();
+                state = "correct"
             }
             else if(button == 2){
-                //run
+                failbeef();
+                state = "failbeef"
             }
             else if(button == 3){
-                //stay
+                failshrimp();
+                state = "failshrimp"
             }
         }
         return false;
     }
+
+
+    if(state =="ramentime"){
+            if (button == 1){
+                chicken();
+                state = "chicken"
+            }
+        }
+        else if(state == "chicken"){
+            if (button == 1){
+                //chicken
+            }
+            else if(button == 2){
+                //beef
+            }
+            else if(button == 3){
+                //shrimp
+            }
+        }
+    
+
 
 </script>
     </body>
