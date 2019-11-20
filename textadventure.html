@@ -144,7 +144,7 @@
         b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
-
+        intro();
     }
 
     function ramentime(){
@@ -161,9 +161,9 @@
     }
 
    function correct(){
-       pic.src = "images/topsec.jpg";
+        pic.src = "images/yes.png";
         ptext1.innerHTML= "Correct, Chicken Top Ramen is in fact the type of Top Ramen with the secret ingredient.";
-        b1.innerHTML = "continue";
+        b1.innerHTML = "next";
         b1.style.display = "block";
         b2.style.display = "none";
         b3.style.display = "none";
@@ -171,9 +171,9 @@
    }
 
    function failbeef(){
-       pic.src = "images/failbeef.jpg";
-        ptext1.innerHTML= "Beef is quite tasty, but does not contain the secret ingredient. It does contain some state of the art gunpowder though, and you just put it in the microwave..";
-        b1.innerHTML = "continue";
+       pic.src = "images/beeflel.jpg";
+        ptext1.innerHTML= "Beef is quite tasty, but does not contain the secret ingredient. It does contain some state of the art gunpowder though, and you just put it in the microwave.. Please play again!";
+        b1.innerHTML = "return to start";
         b1.style.display = "block";
         b2.style.display = "none";
         b3.style.display = "none";
@@ -183,12 +183,24 @@
    function failshrimp(){
        pic.src = "images/failshrimp.jpg";
         ptext1.innerHTML= "Sorry, please try again. Shrimp is quite nasty and certainly does not contain the secret ingredient.";
-        b1.innerHTML = "continue";
+        b1.innerHTML = "return to start";
         b1.style.display = "block";
         b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
    }
+
+    function hinton(){
+       pic.src = "images/dab.jpg";
+        ptext1.innerHTML= "Your virtual character is has now warped through the time barrier and meets a fellow time traveler.";
+        ptext2.innerHTML= "This character ironically goes by the name Cillary Hinton. She has special powers of deleting emails at super speeds. "
+        b1.innerHTML = "next";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
     //state machine
     function bclick(button){
         if(state =="intro"){
@@ -196,8 +208,7 @@
                 ramentime();
                 state = "ramentime"
             }
-        
-        }
+    }
         else if(state == "ramentime"){
             if (button == 1){
                 correct();
@@ -212,17 +223,14 @@
                 state = "failshrimp"
             }
         }
-        return false;
-    }
 
-
-    if(state =="ramentime"){
+         if(state =="ramentime"){
             if (button == 1){
                 chicken();
-                state = "chicken"
+                state = "correct"
             }
         }
-        else if(state == "chicken"){
+        else if(state == "correct"){
             if (button == 1){
                 //chicken
             }
@@ -233,9 +241,29 @@
                 //shrimp
             }
         }
-    
 
+        if(state =="failbeef"){
+            if (button == 1){
+            intro();
+            state = "intro"
+            }
+        }
 
+        if(state =="failshrimp"){
+            if (button == 1){
+            intro();
+            state = "intro"
+            }
+        }
+
+        if(state =="correct"){
+            if (button == 1){
+                hinton();
+            state = "hinton"
+            }
+        }
+        return false;
+    }
 </script>
     </body>
     </html>
