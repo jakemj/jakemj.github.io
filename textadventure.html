@@ -144,7 +144,6 @@
         b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
-        intro();
     }
 
     function ramentime(){
@@ -190,16 +189,57 @@
         b4.style.display = "none";
    }
 
-    function hinton(){
-       pic.src = "images/dab.jpg";
-        ptext1.innerHTML= "Your virtual character is has now warped through the time barrier and meets a fellow time traveler.";
-        ptext2.innerHTML= "This character ironically goes by the name Cillary Hinton. She has special powers of deleting emails at super speeds. "
-        b1.innerHTML = "next";
+     function hinton(){
+       pic.src = "images/23.jpg";
+        ptext1.innerHTML= "Suddenly, your appartment shudders and you fall into a black hole. About an hour later(who really knows how long as time seems endless), you wake up and realize you traveled into the future.";
+        ptext2.innerHTML= "You suddenly spawn into this futuristic earth, and you go to the bank. The money in your account is worth about 800,000 dollars in futuristic time. ";
+        ptext3.innerHTML= "In the next 3 slides, your character will have 3 items available to buy. Please choose one.";
+        b1.innerHTML = "continue";
         b1.style.display = "block";
         b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
    }
+
+   function bob(){
+       pic.src = "images/car.jpg";
+        ptext1.innerHTML= "Car?"
+        ptext2.innerHTML= "Benefits: Transportation, Looks cool.";
+        ptext3.innerHTML= "Drawbacks: Need to scavenge gas, as all cars in this era are electric.";
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function nextone(){
+       pic.src = "images/house.jpg";
+        ptext1.innerHTML= "Appartment instead?".
+        ptext2.innerHTML= "Benefits: Safe place to sleep, storage".
+        ptext3.innerHTML= "Drawbacks: lack of transportation, Mortage UNKOWN".
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function nexttwo(){
+       pic.src = "images/r4.jpg";
+        ptext1.innerHTML= "Appartment instead?".
+        ptext2.innerHTML= "Benefits: Safe place to sleep, storage".
+        ptext3.innerHTML= "Drawbacks: lack of transportation, Mortage UNKOWN".
+        b1.innerHTML = "yes";
+        b2.innerHTML = "no";
+        b1.style.display = "block";
+        b2.style.display = "block";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
 
     //state machine
     function bclick(button){
@@ -224,7 +264,7 @@
             }
         }
 
-         if(state =="ramentime"){
+         else if(state =="ramentime"){
             if (button == 1){
                 chicken();
                 state = "correct"
@@ -259,7 +299,28 @@
         if(state =="correct"){
             if (button == 1){
                 hinton();
-            state = "hinton"
+                state = "hinton"
+            }
+        }
+
+        else if(state =="hinton"){
+            if (button == 1){
+                bob();
+                state = "bob";
+            }
+        }
+
+        else if(state =="bob"){
+            if (button == 2){
+                nextone();
+                state = "nextone";
+            }
+        }
+
+        else if(state =="bob"){
+            if (button == 1){
+                nexttwo();
+                state = "nextwo";
             }
         }
         return false;
