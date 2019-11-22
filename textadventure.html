@@ -201,7 +201,7 @@
         b4.style.display = "none";
    }
 
-   function bob(){
+   function car(){
        pic.src = "images/car.jpg";
         ptext1.innerHTML= "Car?"
         ptext2.innerHTML= "Benefits: Transportation, Looks cool.";
@@ -214,11 +214,11 @@
         b4.style.display = "none";
    }
 
-   function nextone(){
-       pic.src = "images/house.jpg";
-        ptext1.innerHTML= "Appartment instead?".
-        ptext2.innerHTML= "Benefits: Safe place to sleep, storage".
-        ptext3.innerHTML= "Drawbacks: lack of transportation, Mortage UNKOWN".
+   function sword(){
+       pic.src = "images/th.jpeg";
+        ptext1.innerHTML= "Sword?"
+        ptext2.innerHTML= "Benefits: Protection.";
+        ptext3.innerHTML= "Drawbacks: Lack of Transportation.";
         b1.innerHTML = "yes";
         b2.innerHTML = "no";
         b1.style.display = "block";
@@ -227,15 +227,110 @@
         b4.style.display = "none";
    }
 
-   function nexttwo(){
-       pic.src = "images/r4.jpg";
-        ptext1.innerHTML= "Appartment instead?".
-        ptext2.innerHTML= "Benefits: Safe place to sleep, storage".
-        ptext3.innerHTML= "Drawbacks: lack of transportation, Mortage UNKOWN".
+    function mats(){
+       pic.src = "images/45.jpg";
+        ptext1.innerHTML= "Materials?"
+        ptext2.innerHTML= "Benefits: Protection, Unique Creativity.";
+        ptext3.innerHTML= "Drawbacks: Lack of Transportation.";
         b1.innerHTML = "yes";
-        b2.innerHTML = "no";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function failure(){
+       pic.src = "images/failure.jpg";
+        ptext1.innerHTML= "Please try later.?"
+        ptext2.innerHTML= ""
+        ptext3.innerHTML= ""
+        b1.innerHTML = "return to start";
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function good(){
+       pic.src = "images/jun.jpg";
+        ptext1.innerHTML= "Smart choice! Transportation is not needed in this era, as hinted earlier, as teleportaion is within the scope of human capabilities."
+        ptext2.innerHTML= "Dio Brando is now stuck in the jungle, with a sword, and hope. He sees a chest infront of him, glowing yellow."
+        ptext3.innerHTML= "What shall Dio Brando do? (remember, the goal is to get back to his reality)."
+        b1.innerHTML = "Open the Chest";
+        b2.innerHTML = "Break the Chest"
+        b3.innerHTML = "Walk away from the Chest"
         b1.style.display = "block";
         b2.style.display = "block";
+        b3.style.display = "block";
+        b4.style.display = "none";
+   }
+
+   function rip(){
+       pic.src = "images/download.jpg";
+        ptext1.innerHTML= "Maybe not the smartest idea. A monster was inside ready for human blood. You have died, please try again later."
+        ptext2.innerHTML= ""
+        ptext3.innerHTML= ""
+        b1.innerHTML = "return to start";
+        b2.innerHTML = "Break the Chest"
+        b3.innerHTML = "Walk away from the Chest"
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function won(){
+       pic.src = "images/download.jpg";
+        ptext1.innerHTML= "While breaking the chest, a sudden monster from the inside bursts out but is in pain from the sound of the cracking of the chest. You are able to see an orb within the chest ruins. You reach out your hand to touch it..."
+        ptext2.innerHTML= ""
+        ptext3.innerHTML= ""
+        b1.innerHTML = "continue";
+        b2.innerHTML = "Break the Chest"
+        b3.innerHTML = "Walk away from the Chest"
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function lel(){
+       pic.src = "images/slice.jpg";
+        ptext1.innerHTML= "Maybe not the smartest idea. A monster was inside ready for human blood. You have died, please try again later."
+        ptext2.innerHTML= ""
+        ptext3.innerHTML= ""
+        b1.innerHTML = "Open the Chest";
+        b2.innerHTML = "Break the Chest"
+        b3.innerHTML = "Walk away from the Chest"
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+   function starve(){
+       pic.src = "images/slice.jpg";
+        ptext1.innerHTML= "Your hunger starts to control your mind, as you keep walking for miles without and direction. You regret not opening the chest and you collapse suddenly onto the jungle leaves and die. please try again."
+        ptext2.innerHTML= ""
+        ptext3.innerHTML= ""
+        b1.innerHTML = "return to start";
+        b2.innerHTML = "Break the Chest"
+        b3.innerHTML = "Walk away from the Chest"
+        b1.style.display = "block";
+        b2.style.display = "none";
+        b3.style.display = "none";
+        b4.style.display = "none";
+   }
+
+    function winn(){
+       pic.src = "images/win.jpg";
+        ptext1.innerHTML= "Congratulations, you are successful for freeing Dio Brando from his scary virtual reality. Thanks for clicking on the game!"
+        ptext2.innerHTML= ""
+        ptext3.innerHTML= ""
+        b1.innerHTML = "return to start";
+        b2.innerHTML = "Break the Chest"
+        b3.innerHTML = "Walk away from the Chest"
+        b1.style.display = "block";
+        b2.style.display = "none";
         b3.style.display = "none";
         b4.style.display = "none";
    }
@@ -305,22 +400,94 @@
 
         else if(state =="hinton"){
             if (button == 1){
-                bob();
-                state = "bob";
+                car();
+                state = "car";
             }
         }
 
-        else if(state =="bob"){
+        else if(state =="car"){
             if (button == 2){
-                nextone();
-                state = "nextone";
+                sword();
+                state = "sword";
+            }
+        if(button == 1){
+                failure();
+                state = "failure";
             }
         }
 
-        else if(state =="bob"){
+        else if(state =="failure"){
             if (button == 1){
-                nexttwo();
-                state = "nextwo";
+                intro();
+                state = "intro";
+        
+            }
+        }
+
+        else if(state =="mats"){
+            if (button == 1){
+                failure();
+                state = "failure";
+            }
+        }
+
+        else if(state =="sword"){
+            if (button == 2){
+                mats();
+                state = "mats";
+            }
+        if(button == 1){
+                good();
+                state = "good";
+            }
+        }
+
+        else if(state =="good"){
+            if (button == 1){
+                rip();
+                state = "rip";
+            }
+        if(button == 2){
+            won();
+            state = "won";
+            }
+        if(button == 3){
+            failure();
+            state = "failure";
+            }
+        }
+        else if(state =="rip"){
+            if (button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+
+        else if(state =="starve"){
+            if (button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+
+        else if(state =="starve"){
+            if (button == 1){
+                intro();
+                state = "intro";
+            }
+        }
+
+        else if(state =="won"){
+            if (button == 1){
+                winn();
+                state = "winn";
+            }
+        }
+
+        else if(state =="winn"){
+            if (button == 1){
+                intro();
+                state = "intro";
             }
         }
         return false;
